@@ -23,4 +23,20 @@
     public const string PREFAB_BONUS_VERTICAL = "prefabs/itemBonusVertical";
 
     public const string PREFAB_BONUS_BOMB = "prefabs/itemBonusBomb";
+
+    // Scriptable Object Sprite Item
+    public const string SPRITE_NORMAL_TYPE_ONE = "ScriptableObject/itemNormal01";
+
+    public const string SPRITE_NORMAL_TYPE_TWO = "ScriptableObject/itemNormal02";
+
+    public const string SPRITE_NORMAL_TYPE_THREE = "ScriptableObject/itemNormal03";
+
+    public const string SPRITE_NORMAL_TYPE_FOUR = "ScriptableObject/itemNormal04";
+
+    public const string SPRITE_NORMAL_TYPE_FIVE = "ScriptableObject/itemNormal05";
+
+    public const string SPRITE_NORMAL_TYPE_SIX = "ScriptableObject/itemNormal06";
+
+    public const string SPRITE_NORMAL_TYPE_SEVEN = "ScriptableObject/itemNormal07";
+
 }
