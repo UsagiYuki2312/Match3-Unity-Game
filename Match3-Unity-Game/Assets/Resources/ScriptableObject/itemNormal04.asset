@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e662098a2252224092434c18db160f6, type: 3}
   m_Name: itemNormal04
   m_EditorClassIdentifier: 
-  ItemType: 0
-  ItemRenderer: {fileID: 0}
+  ItemType: 3
+  ItemRenderer: {fileID: 21300000, guid: 3bbd6a925d3f3c44aa3642011798e97a, type: 3}

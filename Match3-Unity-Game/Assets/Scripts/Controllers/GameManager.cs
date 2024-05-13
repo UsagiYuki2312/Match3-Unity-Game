@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
         GAME_STARTED,
         PAUSE,
         GAME_OVER,
+    
     }
 
     private eStateGame m_state;
@@ -32,6 +34,16 @@ public class GameManager : MonoBehaviour
             m_state = value;
 
             StateChangedAction(m_state);
+        }
+    }
+
+    private eLevelMode m_levelstate;
+    public eLevelMode LevelState
+    {
+        get { return m_levelstate; }
+        private set
+        {
+            m_levelstate = value;
         }
     }
 
@@ -97,9 +109,24 @@ public class GameManager : MonoBehaviour
             m_levelCondition.Setup(m_gameSettings.LevelMoves, m_uiMenu.GetLevelConditionView(), this);
         }
 
+        LevelState = mode;
         m_levelCondition.ConditionCompleteEvent += GameOver;
 
         State = eStateGame.GAME_STARTED;
+    }
+
+    public void RestartLevel()
+    {
+        ClearLevel();
+        if (m_levelCondition != null)
+        {
+            Destroy(m_levelCondition);
+            m_levelCondition = null;
+        }
+        StateChangedAction = null;
+        m_uiMenu.Setup(this);
+        LoadLevel(LevelState);
+
     }
 
     public void GameOver()
